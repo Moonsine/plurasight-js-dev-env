@@ -26,10 +26,11 @@ steps:
     testType: 'app'
     monitorOnBuild: true
     failOnIssues: true
-    - task: WhiteSource@20
-      inputs:
-        cwd: '$(Build.SourcesDirectory)'
-        extensions: '.dll'
-        checkPolicies: 'SEND_ALERTS'
-        projectRule: 'projectName'
-        projectName: '$(Build.Repository.Name)'
+
+- task: WhiteSource@20
+  inputs:
+    cwd: '$(Build.SourcesDirectory)'
+    extensions: '.dll'
+    checkPolicies: 'SEND_ALERTS'
+    projectRule: 'projectName'
+    projectName: '$(Build.Repository.Name)'
